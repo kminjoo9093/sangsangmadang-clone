@@ -1,0 +1,9 @@
+// 검색엔진최적화 관련
+@mixin ally-hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+// mixin자체는 css로 컴파일시키지않음. mixin을 실행시키면 실행문에서 컴파일됨
