@@ -1,0 +1,22 @@
+@use "../variables" as *;
+// 이미지 경로 유효성 검사
+@use "sass:meta";
+
+// '/images/'고정 이미지 루트는 변수로 뺌
+// 필요없을 수도 있는 값은 기초값을 null로
+@mixin background($filename, $position:null, $color:null, $option:null, $value:null){
+  // 이미지 경로 유효성 검사
+  @if meta.type-of($filename) != string or $filename == "" or $filename == (){
+    @error '이미지는 파일명.확장자까지 작성해야 합니다.';
+  }
+
+  background: url("#{$imgUrl}#{$filename}") no-repeat $position $color;
+
+  @if($option == 'size'){
+    background-size: $value;
+  } @else if($option == 'clip'){
+    background-clip: $value;
+  } @else if($option == 'origin'){
+    background-origin: $value;
+  }
+}

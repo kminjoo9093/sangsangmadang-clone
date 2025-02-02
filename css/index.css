@@ -1,61 +1,18 @@
-@import url("https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css") layer(Reset);
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
-@layer Typography {
-  * {
-    font-family: "Pretendard Variable";
-  }
-  html {
-    font-size: 62.5%;
-  }
-  body {
-    font-size: 1rem;
-    color: #333;
-  }
-}
-a {
-  text-decoration: none;
-  color: inherit;
-}
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 4 | @forward '/u'
+ *   | ^^^^^^^^^^^^^
+ *   '
+ *   scss/layout/_index.scss 4:1  @use
+ *   scss/index.scss 3:1          root stylesheet */
 
-.ally-hidden {
-  overflow: hidden;
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  clip: rect(1px, 1px, 1px, 1px);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a   \2577 \a 4 \2502  @forward '/u'\a   \2502  ^^^^^^^^^^^^^\a   \2575 \a   scss/layout/_index.scss 4:1  @use\a   scss/index.scss 3:1          root stylesheet";
 }
-
-header {
-  width: 160rem;
-  margin-inline: auto;
-}
-
-.logo img {
-  width: 15rem;
-}
-
-.familysite {
-  display: flex;
-  gap: 2rem;
-}
-.familysite a {
-  font-size: 5rem;
-  font-weight: 800;
-}
-.familysite li:nth-child(1):hover {
-  color: crimson;
-}
-.familysite li:nth-child(2):hover {
-  color: lightgreen;
-}
-.familysite li:nth-child(3):hover {
-  color: orange;
-}
-.familysite li:nth-child(4):hover {
-  color: purple;
-}
-.familysite li:nth-child(5):hover {
-  color: skyblue;
-}
-
-/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,44 @@
+@use "../abstracts" as *;
+
+.btn-archive{
+  // before는 인라인요소->>부모에 flex를 줘서 자식요소가 플렉스 항목이 되어 보이도록 (flex레이아웃에서 자식요소는 블록요소처럼 동작함 + 가상클래스에 position안줬으니 플렉스요소가능)
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  &:before{
+    content: '';
+    // 이미지 경로는 scss가 아닌 css컴파일된 파일을 기준으로 함(루트로 적는게 나음)
+    // background: url(/images/ico_archive.svg) no-repeat center / contain;
+    @include background('ico_archive.svg', center, null, size, contain);
+    // 가로세로 1:1 비율
+    width: 3rem;
+    aspect-ratio: 1;
+  }
+  .utility & {
+    color: #fff;
+    &:before{
+      @include background('ico_archive_white.svg', center, null, size, contain);
+    }
+  }
+}
+.btn-calendar{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  &:before{
+    content: '';
+    @include background('ico_calendar.svg', center, null, size, contain);
+    width: 3rem;
+    aspect-ratio: 1;
+  }
+  .utility & {
+    color: #fff;
+    &:before{
+      @include background('ico_calendar_white.svg', center, null, size, contain);
+    }
+  }
+}
